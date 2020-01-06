@@ -3,8 +3,8 @@
 Mi. - Ultimate Personal Resume vCard Template
 
 File:			CSS Theme Base
-Version:        1.2
-Last change:    01/01/16 
+Version:        1.3
+Last change:    20/07/16
 Author:			Suelo
 
 Table of Contents:
@@ -22,6 +22,19 @@ Table of Contents:
 /* --- 1. DOCUMENT SETUP
 /* ----------------------------------------------------------------------------- */
 
+#myChart {
+	height:100%;
+	width:100%;
+	min-height:150px;
+}
+#myChart-top
+{
+	top: -250px;
+}
+.zc-ref {
+	display:none;
+	
+}
     body {
     	position: relative;
 		color: #282828;
@@ -273,6 +286,27 @@ Table of Contents:
 		height: 100%;
 	}
 
+	.bg-slideshow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-position: center center;
+		background-size:  cover;
+		background-repeat: no-repeat; 
+		z-index: 0;
+	}
+
+	.bg-slideshow + * { position: relative; }
+
+	.bg-slideshow .owl-wrapper-outer, 
+	.bg-slideshow .owl-wrapper, 
+	.bg-slideshow .owl-item {
+		height: 100%;
+		overflow: hidden;
+	}
+
 	.animated { visibility: hidden; }
 	.animated.visible { visibility: visible; }
 	.animate-hover { -webkit-animation-fill-mode: both; animation-fill-mode: both; }
@@ -335,14 +369,14 @@ Table of Contents:
 	.nav-vertical > li > a.active, .nav-vertical > li.active > a { color: #fff; }
 	.nav-vertical > li > a.active:before, .nav-vertical > li.active > a:before { transform: scale(1); -webkit-transform: scale(1); visibility: visible; opacity: 1; }
 
-	.nav-vertical > li > ul { 
-		padding: 10px 0px 20px;
+	.nav-vertical li ul { 
+		padding: 10px 5px 20px;
 		list-style: none;
 		display: none;
 	}
-	.nav-vertical > li.active > ul { display: block; }
+	.nav-vertical li.active > ul { display: block; }
 
-	.nav-vertical > li > ul > li > a {
+	.nav-vertical > li ul a {
 		line-height: 1.8;
 		opacity: 0.5;
 	}
@@ -435,13 +469,13 @@ Table of Contents:
 		text-align: center;
 		z-index: 1;
 	}
-
+	
 	/* Horizontal Navigation
 	------------------------------------------- */
 	
 	.nav-horizontal > li { display: inline-block; margin: 0px 10px; line-height: 1.; }
 
-	.nav-horizontal > li > a { position: relative; display: block; font-size: 13px; font-weight: 500; padding: 8px 0; }
+	.nav-horizontal > li > a { position: relative; display: block; font-size: 13px; font-weight: 500; padding: 12px 0; }
 	.nav-horizontal > li > a:hover, .nav-horizontal > li > a:focus { background: transparent; }
 	
 	.nav-horizontal > li > a > span { position: relative; z-index: 1; }

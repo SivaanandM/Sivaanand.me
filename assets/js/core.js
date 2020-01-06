@@ -3,8 +3,8 @@
 Mi. - Ultimate Personal Resume vCard Template
 
 File:           JS Core
-Version:        1.0
-Last change:    15/10/15 
+Version:        1.3
+Last change:    20/07/16 
 Author:         Suelo
 
 -------------------------------------------------------------------------------- */
@@ -76,6 +76,19 @@ var Mi = {
                 $(this).css('background-image','url('+src+')').children('img').hide();
             });
 
+            // Slideshow 
+            $('.bg-slideshow').owlCarousel({
+                singleItem: true,
+                autoPlay: 4000,
+                pagination: false,
+                navigation: false,
+                navigationText: false,
+                slideSpeed: 1500,
+                transitionStyle: 'fade',
+                mouseDrag: false,
+                touchDrag: false
+            });
+
         },
         animations: function() {
             // Animation - hover 
@@ -143,7 +156,7 @@ var Mi = {
                     }
                 },
                 offset: function() {
-                    if ($body.hasClass('header-horizontal')) return -this.element.clientHeight+headerHeight;
+                    if ($body.hasClass('header-horizontal')) return -this.element.clientHeight+headerHeight+2;
                     else return -this.element.clientHeight+2;
                 }
             });
@@ -347,7 +360,7 @@ var Mi = {
                         data: $(this).serialize(),
                         success: function(msg) {
                             if (msg === 'SEND') {
-                                response = '<div class="alert alert-success">Done! Thank for your message - You will get you an answer as fast as possible!';
+                                response = '<div class="alert alert-success">Done! Thank you for your message - You will get an answer as soon as possible.';
                             }
                             else {
                                 response = '<div class="alert alert-danger">Ooops... It seems that we have a problem.';
